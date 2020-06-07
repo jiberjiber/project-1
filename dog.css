@@ -6,3 +6,8 @@ img{
  width: 200px;
  height: auto;  
 }
+
+button{
+    background-color: cornflowerblue;
+    margin-bottom: 5px;
+}
