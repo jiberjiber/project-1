@@ -33,7 +33,8 @@ function createMap(){
         navigator.geolocation.getCurrentPosition(function (position) {
         coord= {
             lat: position.coords.latitude,
-            lng:position.coords.longitude
+            lng:position.coords.longitude,
+            accuracy:position.coords.accuracy
         };
         //calling a new google map result
         map= new google.maps.Map(document.getElementById('map'),{
@@ -230,29 +231,35 @@ function createMap(){
         
         getNearbyPlaces(coord)
         
+        },function(error){
+            if (error.code ==1){
+            let errorM= document.getElementById('error');
+            errorM.textContent=error.message+', Turn on your geolocation to use this app!!'
+            
+            }
+        // console.log(error)
         });
 
-      
        
     }
     //setting up error code
-    // else {
-        
-    //     navigator.geolocation.setCurrentPosition(function showPosition (position) {
-    //     coord= {lat:30.267,lng:-97.743};
-    //         map= new google.maps.Map(document.getElementById('map'),{
-    //             center: coord,
-    //             zoom: 14
+    else {
     
-    //     })
-    //     bounds.extend(coord);
-    //     infoWindow.setPosition(coord);
-    //     infoWindow.setContent('HQ: Refresh Browser and trun on Your GPS to use this app');
-    //     infoWindow.open(map); 
-        
-    // })
-    
-    // }
+    navigator.geolocation.setCurrentPosition(function showPosition (position) {
+    coord= {lat:30.267,lng:-97.743};
+        map= new google.maps.Map(document.getElementById('map'),{
+            center: coord,
+            zoom: 14
+            
+    })
+    bounds.extend(coord);
+    infoWindow.setPosition(coord);
+    infoWindow.setContent('HQ: Geolocation is not supported in your device');
+    infoWindow.open(map); 
+            
+    })
+   
+    }
     
 
 }
@@ -281,9 +288,8 @@ function callBack(result, status){
         //if true we create marker for each result
     createMarkers(result);
     
-    // listThem(result);
-    //creating a list from result(s)
-    
+    //showing how many rersults there are
+    display(result);
     }
 }
 //step 4
@@ -341,7 +347,7 @@ parkInfo.appendChild(createPhoto);
 if (place.rating){
 let createRating= document.createElement('h4');
 let styleRating= createRating.classList.add('styleRating');
-createRating.textContent='Rating:'+place.rating;
+createRating.textContent='Rating: '+place.rating+' Stars';
 parkInfo.appendChild(createRating);
 }else{
     let createRating= document.createElement('h4');
@@ -366,7 +372,7 @@ if(place.formatted_address){
 let createDir= document.createElement('a');
 let addressStyle= createDir.classList.add('direct');``
 createDir.href='https://www.google.com/maps/search/?api=1&query='+place.name;
-createDir.textContent='View on Google Maps';
+createDir.textContent='Get direction to '+place.name;
 parkInfo.appendChild(createDir);
 }
 
@@ -375,11 +381,11 @@ markerInfoWindow(place,dot);
 }
 })    
 
-
+ 
    }) 
 
 }
-
+//showing an info pane for each marker after a click event
 function markerInfoWindow(place,dot){
 if(place.name){
 let markerInfoWindow= new google.maps.InfoWindow();
@@ -391,5 +397,11 @@ currentInfoWindow= markerInfoWindow;
 }
 
 }
+function display(result){
+let display= document.getElementById('display');
+display.innerHTML= '<strong>There are '+result.length+ ' dog parks within ...</strong>'
+
+}
+
 
 
