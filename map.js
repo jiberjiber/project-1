@@ -1,3 +1,14 @@
+
+/* -----IDs, classes and srcs requiride for the UI team----
+1) <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXMG7fbs3VQT5O8S1hJY_f8NDrVuS2kzE&libraries=places&callback=createMap" async defer></script>
+
+2)<p id="display" ></p> shows the count of the search result
+3) <div id="map"></div> This div holds the map (to be use also in css for map size)
+4) <div id=parkInfo></div> this div hold the details information
+
+*/
+
+
 //---------plan of action (stage 1)----
 // lets create a map with set origin austin
 //use HTML5 to find user geolocation
@@ -324,13 +335,13 @@ function clickEv(dot,place){
    google.maps.event.addListener(dot,'click',function(){
     let request={
         placeId: place.place_id,
-        fields:['name','photos','formatted_address','rating','website','adr_address']
+        fields:['name','photos','formatted_address','rating','website','adr_address','opening_hours']
     }
     //setting up event listener for each markers
 service.getDetails(request, function(place,status){
 if (status == google.maps.places.PlacesServiceStatus.OK){
     // console.log(google.maps);
-    // console.log(place.rating);
+    console.log(place.opening_hours);
 parkInfo= document.getElementById('parkInfo');
 parkInfo.innerHTML='<h1>'+place.name+'</h1>';
 
@@ -367,6 +378,12 @@ let createAddress= document.createElement('p');
 let createStyle= createAddress.classList.add('address');
 createAddress.innerHTML='<strong>Address: </strong>'+place.formatted_address;
 parkInfo.appendChild(createAddress);
+}
+if(place.opening_hours){
+let showOpen=document.createElement('p');
+let showStyle= showOpen.classList.add('showStyle');
+showOpen.innerHTML='<strong>Open Hours: </strong>'+place.opening_hours.weekday_text;
+parkInfo.appendChild(showOpen);
 }
 if(place.formatted_address){
 let createDir= document.createElement('a');
