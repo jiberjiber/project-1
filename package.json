@@ -4,7 +4,7 @@
   "description": "",
   "main": "server/index.js",
   "scripts": {
-    "start": "node server",
+    "start": "node server/index.js",
     "dev": "nodemon server --watch server"
   },
   "author": "Evan Boswood, Rachael Adu, Alex Saint Victor, Sabrina Hollett",
