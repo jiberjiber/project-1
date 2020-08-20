@@ -6,18 +6,8 @@
     "host": "2.0.0.1",
     "dialect": "mysql"
   },
-  "test": {
-    "username": "dog_date",
-    "password": "zx+2m2Tz&N@SQlOwJ821fOP!Xa0Ec(sT&)i&dW8mo(/gJ$aS+nTNThDm1i0@/mQj7g5",
-    "database": "dog_date_v2",
-    "host": "boswood.org",
-    "dialect": "mysql"
-  },
   "production": {
-    "username": "dog_date",
-    "password": "zx+2m2Tz&N@SQlOwJ821fOP!Xa0Ec(sT&)i&dW8mo(/gJ$aS+nTNThDm1i0@/mQj7g5",
-    "database": "dog_date_v2",
-    "host": "boswood.org",
-    "dialect": "mysql"
+    "use_env_variable": "JAWSDB_URL",
+    "dialect":  "mysql"
   }
 }
