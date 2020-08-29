@@ -1,23 +1,19 @@
 article(class="grid-container fluid" id="allUsersDiv")
-	p.text-center Connect with other users in your area and make a new bff for your dog!
-	div(class="grid-x grid-margin-x small-up-2 medium-up-3 large-up-5 allUsers" id="allUsers")
+	h5(class="sectionHeader")
+		| Connect
+	div(class="grid-x grid-margin-x small-up-2 medium-up-3 large-up-4 allUsers" id="allUsers")
 		each val in allUsers
-			div(class="cell users")
-				div(class="textOverlay textCtr")
-					h5(class="user-name")= val.username
-					//span(class="location")
-						span(class="location-icon fa fa-map-marker")
-							pan(class="location-text") Austin, TX
-					div(class="makeFlex")
-						div(class="overlayInfo float-left")
-							p 
-								i(class="fa fa-paw big")
-								span(class="pets")= val.numPets
-						div(class="overlayContact float-right")
-							
-							//p 
-								i(class="fa fa-user big")
-							
-				div(class="overlay ctr")
-					a(href="/profile/"+val.id)
+			- var imgURL = val.profileImg
+			div(class="cell users" style=`background-image:url(${imgURL}); background-size: cover; background-position: center;`)
+				a(href="/profile/"+val.id)
+					div(class="textOverlay textCtr")
+						h5(class="user-name")= val.username
+						//span(class="location")
+							span(class="location-icon fa fa-map-marker")
+								pan(class="location-text") Austin, TX
+						div(class="overlayInfo")
+								p 
+									i(class="fa fa-paw") 
+									span(class="pets")= val.numPets
+					div(class="overlay ctr")
 						button(type="button" class="hollow button small primary") View profile!

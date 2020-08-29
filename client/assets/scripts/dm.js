@@ -30,13 +30,13 @@ $('#sendName').click(function(e){
     $("#sendName").toggle();
     notifier=sender
 })
-socket.on("user",function(data){
-   //for testing only to be deleted
-    console.log("front-end "+data)
-        // $("#online").append($(`<button id=thisUser value=${data}>${data}</button>`))
-        // $(`button[value=${data}`).removeClass( "allUsers" ).addClass( "allUsersOnline" );
-        $(`#onlineNow[value=${data}`).css("visibility", "visible")
-    })
+// socket.on("user",function(data){
+//    //for testing only to be deleted
+//     console.log("front-end "+data)
+//         // $("#online").append($(`<button id=thisUser value=${data}>${data}</button>`))
+//         // $(`button[value=${data}`).removeClass( "allUsers" ).addClass( "allUsersOnline" );
+//         $(`#onlineNow[value=${data}`).css("visibility", "visible")
+//     })
     
 
 //1) on load make an ajax call to get all user names

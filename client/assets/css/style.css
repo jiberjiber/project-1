@@ -1,169 +1,824 @@
+* {
+  box-sizing: border-box !important;
+  margin: 0;
+  padding: 0;
+}
 
 body {
-	
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-attachment: fixed;
-	font-family: "Karla", sans-serif;
-	color: #3d3a35;
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-	font-size: 16px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: "Karla", sans-serif;
+  color: #3d3a35;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
 }
 
 body.background-image {
-	background-image: url("../images/zilker.jpg");
+  background-image: url("../images/zilker.jpg");
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Karla", sans-serif;
 }
 
 .form-container {
-	width: 50vw;
-	align-content: space-around;
+  width: 50vw;
+  align-content: space-around;
 }
 
+.pageMainSection > article {
+  padding-right: 3rem !important;
+  padding-left: 3rem !important;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
 #main {
-	margin: auto;
-	padding: 50px 0px;
-	flex: 1;
+  margin: auto;
+  padding: 50px 0px;
+  flex: 1;
 }
-
-#main > div {
-	display: flex;
-	flex-direction: column;
-}
-
 
 .uk-button {
-	border-radius: 3px;
-	margin-top: 3px;
+  border-radius: 3px;
+  margin-top: 3px;
 }
 
-.hover-danger:hover {
-	background-color: palevioletred;
+#radiusOptions,
+#radiusOptions #submit {
+  margin-bottom: 3px;
 }
-
-#mainArea {
-	padding-left: 10px;
-}
-
-
-#radiusOptions, #radiusOptions #submit  {
-	margin-bottom: 3px;
-}
-
 
 #map {
-
-	width: 100%;
-	height: 100%;
-
-	background-color: lightgreen;
-	border-radius: .2rem;
+  width: 100%;
+  height: 70%;
+  border-radius: 0.2rem;
 }
 
-
-
 #parkInfo {
-	padding: 20px;
+  padding: 20px;
+  text-align: center;
+  background-color: #edeeee;
 }
 
 #searchResult,
 #parkInfo {
-	height: 90%;
-	border: none;
-	overflow-y: auto;
+  height: 90%;
+  overflow-y: auto;
 }
 
 #searchResult div {
-	padding: 2px;
-	height: 150px;
-	width: auto;
+  padding: 2px;
+  height: 150px;
+  width: auto;
 }
 
 #searchResult div button {
-	height: 100%;
-	overflow: hidden;
-	background-color: #d7e0e7;
-	width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #d7e0e7;
+  width: 100%;
 }
 
 #searchResult button p,
 #searchResult button h6 {
-	margin: 5px;
+  margin: 5px;
 }
 
 #searchResult h6 {
-	margin: 0 0 5px !important;
-	background-color: #09627e;
-	color: #d7e0e7;
+  margin: 0 0 2px !important;
+  background-color: #778899;
+  color: #fff;
 }
 
 #searchResult img {
-	height: auto;
-	width: auto;
+  height: auto;
+  width: auto;
 }
 
 .parkDetails div {
-	padding: 16px;
+  padding: 16px;
 }
 
-/* Park details image */
+#parkList {
+  height: 100%;
+}
 
 .stylePhoto {
-	height: 250px;
+  height: 250px;
+  width: 100%;
 }
 
-/* Park details links */
-
 .styleLink {
-	text-decoration: none;
-	color: #3e575e !important;
+  text-decoration: none;
+  color: #2ba6cb !important;
 }
 
 .styleLink:hover {
-	text-decoration: none;
-	color: #b36b39 !important;
+  text-decoration: none;
+  color: #b36b39 !important;
 }
 
+.petInfo {
+  min-height: 260px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 0.3rem;
+  background: #f0f5fb;
+}
+.petInfo:nth-of-type(even) {
+  background: lightslategray;
+  color: #fff;
+}
 
-@media only screen and (max-width: 959px) {
+.petImage {
+  height: 100%;
+  display: flex;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
 
+.petImage img {
+  max-width: 300px;
+}
 
-	#main {
-		width: 95%;
-		text-align: center;
-	}
+.PetDetails {
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column !important;
+  justify-content: center;
+}
 
-	.section {
-		margin-bottom: 20px;
-		border-radius: 0;
-	}
+.PetDetails li {
+  list-style: none;
+}
 
+.largePaddingTop {
+  padding-top: 50px;
+}
 
-	.uk-grid-column-small {
-		margin-left: 0;
-	}
+.card-user-container {
+  margin-bottom: 1rem;
+  color: #0a0a0a;
+  overflow: hidden;
+  padding: 0;
+  border-radius: 0;
+}
 
-	.parkInfoArea {
-		display: flex;
-		flex-direction: column;
-		border-top: 1px solid #96abb0;
-	}
+.card-user-container .card-user-avatar .profile-image {
+  display: block;
+  margin: auto;
+  border-radius: 50%;
+  width: 11.875rem;
+  height: 11.875rem;
+  padding: 0.9375rem;
+}
 
-	.parkInfoArea h3 {
-		font-weight: 600;
-	}
+.profile-image:hover,
+.users:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: ease 0.5s;
+}
 
-	#parkDetails {
-		padding-top: 20px;
-	}
-	#parkList {
-		height: 350px;
-	}
+.card-user-container .card-user-bio {
+  padding: 1rem;
+  text-align: center;
+}
 
-	#searchResult {
-		height: 80%;
-	}
+.sectionHeader.marginBottom {
+  margin-bottom: 1rem !important;
+}
 
+.card-user-container .card-user-pets {
+  padding: 1rem;
+  text-align: center;
+  border-radius: 0 0 0.5rem 0.5rem;
+  margin-bottom: 16px;
+  background-color: #fff;
+}
+
+.card-user-container .card-user-pets ul li {
+  margin: 0 10px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.card-user-container .card-user-pets ul li:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.card-user-container .card-user-button {
+  text-align: center;
+  padding: 1rem;
+}
+
+.site-footer {
+  color: #00a8de;
+  text-align: center;
+  position: relative;
+}
+
+.footer-top {
+  height: 9rem;
+  background-color: #b9bcc3;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer-bottom {
+  height: 3rem;
+  background-color: #333;
+  color: white;
+}
+
+.footer-bottom a {
+  text-decoration: none;
+  color: white !important;
+}
+
+.footer-bottom a:hover {
+  color: #00a8de !important;
+}
+
+.users {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: flex;
+  margin: auto;
+  min-width: 110px;
+  height: 275px;
+  max-width: 210px;
+  margin-top: 1.3rem;
+  position: relative;
+  background-color: #b9bcc3;
+}
+
+.users img {
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #0103112c;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.75s ease;
+}
+
+.overlay:hover {
+  opacity: 1;
+}
+
+.ctr {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.textOverlay {
+  position: absolute;
+  top: 36%;
+  left: 50%;
+  height: 30%;
+  width: 100%;
+  color: #ffffff;
+  font-weight: 500;
+  z-index: 1000;
+  padding-bottom: 1rem;
+  background-color: rgba(53, 52, 52, 0.6);
+  box-shadow: -1px -1px 12px 3px rgba(53, 52, 52, 0.6);
+}
+
+.textOverlay h5 {
+  font-weight: 500;
+  font-family: "Karla", sans-serif !important;
+}
+
+.textCtr {
+  position: absolute;
+  transform: translate(-50%, 115%);
+  padding: 0.8rem;
+}
+
+.users .overlay .button {
+  border-radius: 0.6rem;
+  font-weight: 700;
+  background-color: rgba(0, 128, 128, 0.336);
+  color: rgb(253, 253, 253) !important;
+  z-index: 500;
+}
+
+.users .overlay .button:hover {
+  background-color: rgba(0, 128, 128, 0.336);
+}
+
+#allUsersDiv {
+  min-height: 400px;
+}
+
+.allUsers {
+  height: 500px;
+  overflow-y: auto;
+  height: 100%;
+  display: flex;
+}
+
+.orbit {
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  border-radius: 0.5rem !important;
+  margin-bottom: 2rem;
+  text-align: center;
+  height: 400px;
+  min-height: 300px;
+  overflow: hidden;
+}
+
+.orbit-caption {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 1rem;
+  background-color: rgba(10, 10, 10, 0.1) !important;
+  color: #fefefe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-text-stroke: 1px #f8f8f8;
+  text-shadow: 0px 1px 5px #23430c;
+}
+
+.orbit-slide h1 {
+  font-size: 4rem;
+}
+
+.orbit-wrapper,
+.orbit-container,
+.orbit-slide,
+.orbit-slide.is-active {
+  height: 100% !important;
+}
+
+.headerText,
+.sectionHeader {
+  width: fit-content;
+}
+
+.sectionHeader {
+  padding: 0.3rem;
+  font-family: "Fredoka One", cursive !important;
+  font-size: 2rem;
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+.mapArea .headerText:hover {
+  border-bottom: 1px solid #00a8de;
+}
+
+#userArea {
+  position: relative;
+}
+
+.noMarginTop {
+  margin-top: 0;
+}
+
+.yOverflow {
+  overflow-y: auto;
+}
+
+.mapArea {
+  justify-content: center;
+  margin: 2rem 0 !important;
+  border-radius: 0.5rem;
+}
+
+.mapInner {
+  min-height: 600px;
+  margin-bottom: 2rem;
+}
+
+.card-user-container .card-user-pets ul {
+  display: inline-block;
+}
+
+.parkInfoArea {
+  display: flex;
+  margin-bottom: 20px;
+  max-height: 750px;
+  border: 1px solid rgb(224, 233, 241);
+  border-radius: 0.3rem;
+  padding: 1rem;
+}
+
+#weather,
+.card-user-container {
+  border-radius: 0.2rem;
+  background: #edeeee;
+  padding: 1rem;
+  box-shadow: 1px 1px 2px #b3b3b3;
+  margin-bottom: 2rem;
+}
+
+#weatherForecast {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 1000px;
+}
+
+.forecast {
+  background-color: #e0ecf7;
+  margin: 0.5rem;
+  padding: 2rem 1rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  box-shadow: 2px 5px 8px #d3d3d3;
+  min-width: 200 !important;
+  max-width: 220px;
+}
+
+.forecast:hover {
+  background-color: #c0d3ee;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 3px 6px 10px #9b9b9b;
+}
+
+#currentWeatherPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: linear-gradient(
+    #9fc6e7,
+    #b7cfec,
+    #ccd9f1,
+    #dee4f5,
+    #eeeff9,
+    #fafafd,
+    #ffffff,
+    #ffffff
+  );
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border-bottom: lightslategray 2px solid;
+}
+
+#currentWeatherPage img {
+  width: 100px;
+  height: 100px;
+  font-size: 1.2rem;
+}
+
+.WeatherLargeArea {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+}
+
+#forecast_div {
+  display: flex;
+  justify-content: center;
+}
+
+.customNavbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+}
+
+.brand-title {
+  font-size: 1.5rem;
+  margin: 0.5rem;
+}
+
+.navbar-links ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-links li {
+  list-style: none;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: white;
+  padding: 1rem;
+  display: block;
+  font-size: 1.1rem;
+  height: 100%;
+}
+
+.navbar-links li button {
+  margin-bottom: 0;
+}
+
+.navbar-links li:hover {
+  background-color: #555;
+}
+
+.toggle-button {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.search-button {
+  color: white !important;
+}
+
+.cell.users.searchRes > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  background-image: url("/assets/images/petSearchDefault.jpg");
+  background-size: cover;
+  color: #fff;
+  font-weight: 600;
+  width: 100%;
+}
+
+.searchRes button {
+  color: #fff !important;
+  font-weight: 600;
+  text-shadow: #00a8de 1px 1px 3px;
+  font-size: 2rem;
+}
+
+.searchRes h5 {
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: #00a8de 1px 1px 3px;
+}
+
+#petAreaHeader h3 {
+  margin: 0;
+}
+
+.add-pets button,
+#petRemoveBtn {
+  border-radius: 0.3rem;
+}
+
+@media screen and (max-width: 18em) {
+  .orbit {
+    height: 165px !important;
+    align-items: center;
+    min-height: 0;
+  }
+
+  .orbit .sectionHeader {
+    font-size: 2.5rem;
+  }
+
+  .orbit h5 {
+    font-size: 1rem;
+  }
+
+  .pageMainSection > article,
+  .petInfo,
+  .parkInfoArea {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+
+  .petImage img {
+    width: 100% !important;
+  }
+
+  #allUsersDiv,
+  .mapArea,
+  article {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  #parkList,
+  #parkDetails {
+    height: 50%;
+  }
+
+  .mapInner {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 18em) and (max-width: 40em) {
+  .card-user-container {
+    background-color: transparent;
+  }
+
+  .card-user-container .card-user-pets {
+    background-color: #e6e6e6;
+  }
+
+  .petImage img {
+    max-width: unset;
+    width: 100%;
+  }
+  .PetDetails {
+    padding-left: 0;
+  }
+
+  .orbit {
+    height: 190px !important;
+    min-height: 0;
+  }
+
+  .orbit .sectionHeader {
+    font-size: 3rem;
+  }
+
+  .orbit h5 {
+    font-size: 1rem;
+  }
+
+  #parkList,
+  #parkDetails {
+    height: 50%;
+  }
+
+  #allUsersDiv,
+  .parkInfoArea,
+  .mapArea {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .parkInfoArea {
+    padding-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 40em) and (max-width: 63.99875em) {
+  #main {
+    width: 95%;
+    text-align: center;
+  }
+
+  .orbit .sectionHeader {
+    font-size: 3rem;
+  }
+
+  .orbit h5 {
+    font-size: 1rem;
+  }
+
+  .card-user-container {
+    background-color: none;
+  }
+
+  .petInfo {
+    background: #b9bcc3;
+  }
+
+  .parkInfoArea {
+    border-top: 1px solid #96abb0;
+  }
+
+  .parkInfoArea h3 {
+    font-weight: 600;
+  }
+
+  #parkDetails {
+    padding-top: 20px;
+  }
+  #parkList,
+  #parkDetails {
+    height: 50%;
+  }
+
+  #searchResult {
+    height: 80%;
+  }
+
+  .orbit {
+    min-height: 300px !important;
+    height: 30vh;
+    min-height: 0;
+  }
+}
+
+@media screen and (max-width: 62.5em) {
+  * {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .toggle-button {
+    display: block !important;
+  }
+  .navbar-links {
+    display: none !important;
+    width: 100% !important;
+  }
+  .customNavbar {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .navbar-links ul {
+    width: 100% !important;
+    flex-direction: column !important;
+  }
+
+  .navbar-links li {
+    text-align: center !important;
+  }
+
+  .navbar-links li a {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-links.active {
+    display: flex !important;
+  }
+
+  #temp {
+    font-family: "Karla", sans-serif !important;
+  }
+
+  .pageMainSection {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+  }
+
+  article {
+    order: 0;
+  }
+
+  .userProfile {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #infoArea {
+    order: 2;
+  }
+
+  .forecast {
+    font-size: 14px;
+    padding: 0.25rem;
+  }
+
+  .forecast h4 {
+    font-size: 20px;
+  }
+
+  .forecast img {
+    width: 70px;
+    height: auto;
+  }
+
+  #infoArea {
+    margin-top: 30px;
+    border: 0;
+  }
+
+  #planner {
+    margin-top: 15px;
+  }
+
+  #userArea {
+    border: 0;
+  }
 }

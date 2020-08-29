@@ -20,8 +20,6 @@ $(document).ready(function () {
 
     method: "GET",
   }).then(function (data) {
-    console.log(data);
-
     getLocation();
     attachIcon();
     getCurrentWeatherData();
@@ -29,7 +27,6 @@ $(document).ready(function () {
 
     function getLocation() {
       if (navigator.geolocation) {
-        // console.log('gps')
         navigator.geolocation.getCurrentPosition(function (position) {
           coord = {
             lat: position.coords.latitude,
@@ -38,14 +35,10 @@ $(document).ready(function () {
           };
           let latiData = coord.lat;
           let longData = coord.lng;
-          console.log(latiData);
-          console.log(longData);
         });
       } else {
         let latiData = 30.2672;
         let longData = -97.7431;
-        console.log(latiData);
-        console.log(longData);
       }
     }
 
@@ -56,13 +49,15 @@ $(document).ready(function () {
       var iconURL = "https://openweathermap.org/img/wn/" + iconID + "@2x.png";
 
       $("#weather-icon, #wpWeatherIcon").attr("src", iconURL);
-      $("#weather-icon, #wpWeatherIcon").attr("alt", data.current.weather.description);
+      $("#weather-icon, #wpWeatherIcon").attr(
+        "alt",
+        data.current.weather.description
+      );
     }
 
     //Retrieve Data for user location's current weather data
     function getCurrentWeatherData() {
       //use moment js for date
-      // const currentWeatherPage = 
       var currentDate = { now: moment().format("ddd, MMM Do") };
       var temperature = Math.floor(data.current.temp) + "&#8457;";
       var humidity = data.current.humidity + "%";
@@ -85,7 +80,6 @@ $(document).ready(function () {
       $("#wpWind").append(" " + wpWind);
       $("#wpUV").append(" " + wpUV);
     }
-
 
     function getForecastData() {
       var forecastDataArray = [
@@ -110,7 +104,7 @@ $(document).ready(function () {
         //variables for retrieving icon image
         var iconData = data.daily[i].weather[0].icon;
         var iconURLForecast =
-        "https://openweathermap.org/img/wn/" + iconData + "@2x.png";
+          "https://openweathermap.org/img/wn/" + iconData + "@2x.png";
         var forecastIconIMG = $("<img>", {
           src: iconURLForecast,
           alt: forecastDesc,
@@ -142,42 +136,33 @@ $(document).ready(function () {
         weatherListStart.append(forecastHumidity);
         weatherListStart.append(forecastWindSpeed);
         weatherListStart.append(forecastUV);
-
       }
     }
   });
 });
 
+$(".petInfo").on("click", "#petRemoveBtn", (e) => {
+  e.preventDefault();
+  const target = $(e.currentTarget);
 
-$('.petInfo').on('click','#petRemoveBtn', e => {
-	e.preventDefault();
-	const target = $(e.currentTarget);
-
-	$.ajax('/pets',{
-		method: 'DELETE',
-		data: {
-			id: target.attr('data-id')
+  $.ajax("/pets", {
+    method: "DELETE",
+    data: {
+      id: target.attr("data-id"),
+    },
+  }).then((data) => {
+    if (data) {
+      window.location.reload();
+    } else {
+      alert("An error has occurred");
     }
-	}).then(data => {
-    
-		if(data){
-			window.location.reload();
-		} else {
-			alert('An error has occurred');
-		}
-	});
+  });
 });
 
-
 // Mobile navbar toggle
-const toggleBtn = document.getElementsByClassName('toggle-button')[0];
-const navbarLinks = document.getElementsByClassName('navbar-links')[0];
+const toggleBtn = document.getElementsByClassName("toggle-button")[0];
+const navbarLinks = document.getElementsByClassName("navbar-links")[0];
 
-toggleBtn.addEventListener('click', () => {
-  navbarLinks.classList.toggle('active');
-})
-
-// const updatePetNum = document.getElementById('totalPets');
-
-//   if 
-
+toggleBtn.addEventListener("click", () => {
+  navbarLinks.classList.toggle("active");
+});

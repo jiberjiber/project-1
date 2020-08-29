@@ -1,68 +1,54 @@
-div(class="cell medium-3 large-2 noMarginTop sidePanels" id="userArea" )
+div(class="cell medium-4 large-2 noMarginTop" id="userArea")
 
-        div(class="panel-radius" id="user")
+    //Start user card
+    div(class="card-user-container" id="userCard")
 
-            //Start user card
-            div(class="card-user-container")
+        div(class="card-user-avatar")
+            a(href="/profile/"+user.id)
+                img(src=""+ user.profileImg, alt="profile image" class="profile-image")
 
-                // card's image
-                div(class="card-user-avatar")
-                    a(href="/profile")
-                        img(src= ""+ user.profileImg, alt="" class="profile-image")
-                
-                    //user info, pet, and location
-                div(class="card-user-bio")
-                    h4 Hi, 
-                        span(id="username")= user.username
-                            
-                    p  
-                        // Unnecessary logic
-                        //if numPets == 1 
-                            span(id="pets")= user.numPets + " "
-                                span fur baby!
-                        //else if numPets <= 1
-                        
-                            h6 Such empty! Add a pet. 
-                        //else 
-                            span(id="pets")= user.numPets + " "
-                                span fur babies!
-                        span(id="pets")= user.numPets + " "
-                            span fur babies!
-                        </p>
-            
-                    //User's registered pets
-                div(class="card-user-pets")
-                    ul(class="menu", id="petCards")
-                        each val in pets
-                            li(class="fa fa-paw" #id="totalPets" data-id= val.id)= val.petName
-                        else 
-                            li(class="far fa-sad-tear") Such empty. Why no pets?
-
-                div(class="add-pets text-center")
-                    button(class="hollow center expanded button" href="#") 
-                        a(id="addPetsBtn", href="/pets/add") Add a Pet
-                    
-                    
-                hr
-
-        div(class="panel-radius hide-for-small-only" id="weather")
-
-            //-     | Current Weather 
-            h5(id="currentDate")
+        div(class="card-user-bio")
+            if targetUserID == undefined
+                h4 Hi, 
+                    =user.username
+            else if targetUserID == userID
+                h4 Hi, 
+                    =username
+            else
+                h4  
+                    =user.username
+            p  
+                span(id="pets")= user.numPets + " "
+                    span pet(s)
+            //User's registered pets
+        div(class="card-user-pets")
+            ul(class="menu", id="petCards")
+                each val in pets
+                    li(class="fa fa-paw" data-id= val.id)= val.petName
         
-                //- <!--   Current weather goes here  -->
-        
-            .weatherEl#currentWeather
-                div(class="grid-x ")
-                    p(class="cell small-4 medium-6 currentTempInfo")
-                        span(id="temp")
-                    img(class="cell small-4 medium-6" id="weather-icon" alt="")
-                    
-                p Humidity: 
-                    span(id="humidity")
-                p Wind Speed: 
-                    span(id="wind")
-                p UV Index: 
-                    span(id="uv-index")
-                p
-                    a(class="smallPrint" href="/weather" alt="") View 6-day forecast
+        if pets.length < 4
+            div(class="add-pets text-center")
+                a(id="addPetsBtn", href="/pets/add")
+                    button(class="hollow center expanded button" href="#") Add a Pet
+        a(id="addPetsBtn", href="/home#searchForm")
+            button(class="center expanded button hide-for-large") Search Dogs
+                  
+    div(class="hide-for-small-only" id="weather")
+
+        h5(id="currentDate")
+            //Current weather div
+
+        .weatherEl#currentWeather
+            div(class="grid-x")
+                h3(class="cell small-6 medium-4")
+                    span(id="temp")
+                img(class="cell small-6 medium-4" id="weather-icon" alt="")
+
+            p Humidity: 
+                span(id="humidity")
+            p Wind Speed: 
+                span(id="wind")
+            p UV Index: 
+                span(id="uv-index")
+            p
+                a(class="smallPrint" href="/weather" alt="") View 6-day forecast

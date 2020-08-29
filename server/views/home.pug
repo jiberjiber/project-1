@@ -2,18 +2,86 @@ extends layouts/main
 
 block home       
 
-  
                 div(class="grid-x grid-padding-x largePaddingTop pageMainSection")
                         include includes/user-panel  
-                        main(class="cell medium-6 large-8 mainSection") 
-                                div(class="hero-section noMarginTop")
-                                        div(class="hero-section-text")
-                                        h1 Dog Date
-                                        h5 New friends for your fur baby
+                        main(class="cell medium-8") 
 
+                                div(class="orbit"
+                                role="region" 
+                                aria-label="Dog Date app photos" 
+                                data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;")
+                                        div(class="orbit-wrapper")
+                                                div(class="orbit-controls")
+                                                        button(class="orbit-previous")
+                                                                span(class="show-for-sr") Previous Slide
+                                                                | &#9664;&#xFE0E;
+                                                        button(class="orbit-next")
+                                                                span(class="show-for-sr") Next Slide
+                                                                | &#9654;&#xFE0E;
+                                        
+                                                ul(class="orbit-container")
+                                                        - const appName = "Dog Date"
+                                                        - const subHeader = "New friends for your fur baby"
+
+                                                        li(class="orbit-slide")
+                                                                figure(class="orbit-figure")
+                                                                        img(class="orbit-image"
+                                                                        src="/assets/images/hero-slide-1.jpg"
+                                                                        alt="Dog photo. Photo by Angel Luciano on Unsplash")
+                                                                        figcaption(class="orbit-caption") 
+                                                                                div(class="caption-holder")
+                                                                                        h1.sectionHeader= appName
+                                                                                        h5= subHeader
+
+                                                        li(class="orbit-slide")
+                                                                figure(class="orbit-figure")
+                                                                        img(class="orbit-image"
+                                                                        src="/assets/images/hero-slide-2.jpg"
+                                                                        alt="Dog photo. Photo by Arjan Stalpers on Unsplash")
+                                                                        figcaption(class="orbit-caption") 
+                                                                                div(class="caption-holder")
+                                                                                        h1.sectionHeader= appName
+                                                                                        h5= subHeader
+
+                                                        li(class="orbit-slide")
+                                                                figure(class="orbit-figure")
+                                                                        img(class="orbit-image"
+                                                                        src="/assets/images/hero-slide-3.jpg")
+                                                                        figcaption(class="orbit-caption") 
+                                                                                div(class="caption-holder")
+                                                                                        h1.sectionHeader= appName
+                                                                                        h5= subHeader
+
+                                                        li(class="orbit-slide")
+                                                                figure(class="orbit-figure")
+                                                                        img(class="orbit-image"
+                                                                        src="/assets/images/hero-slide-4.jpg" 
+                                                                        alt="Photo by gotdaflow on Unsplash")
+                                                                        figcaption(class="orbit-caption") 
+                                                                                div(class="caption-holder")
+                                                                                        h1.sectionHeader= appName
+                                                                                        h5= subHeader
+
+                                                        li(class="orbit-slide")
+                                                                figure(class="orbit-figure")
+                                                                        img(class="orbit-image"
+                                                                        src="/assets/images/hero-slide-5.jpg"
+                                                                        alt="Photo by Wai Siew on Unsplash")
+                                                                        figcaption(class="orbit-caption") 
+                                                                                div(class="caption-holder")
+                                                                                        h1.sectionHeader= appName
+                                                                                        h5= subHeader
+
+                                                        li(class="orbit-slide")
+                                                                figure(class="orbit-figure")
+                                                                        img(class="orbit-image"
+                                                                        src="/assets/images/hero-slide-6.jpg")
+                                                                        figcaption(class="orbit-caption"
+                                                                        alt="Photo by Roberto Lopez on Unsplash") 
+                                                                                div(class="caption-holder")
+                                                                                        h1.sectionHeader= appName
+                                                                                        h5= subHeader
                                 include includes/all-users
                                 include includes/map
 
                         include includes/info-panel
-                        
-                        

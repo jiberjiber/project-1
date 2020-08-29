@@ -103,3 +103,6 @@ dist
 # TernJS port file
 .tern-port
 server/config/config.json
+
+#PugJS rendered HTML
+server/views/html/

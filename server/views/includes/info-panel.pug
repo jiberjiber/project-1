@@ -1,10 +1,10 @@
-div(class="cell medium-3 large-2 noMarginTop sidePanels" id="infoArea" data-sticky-container)
-
+aside(class="cell large-2 noMarginTop sidePanels" id="infoArea" data-sticky-container)
 
         div(class="panel-radius" id="searchForm")
             div( class="translucent-form-overlay")
                 form(data-abide novalidate id="petSearchForm" method="POST")
-                    h5 Search for dogs
+                    h5 
+                        strong Search dogs
                     
                     label Breed
                     select(
@@ -35,49 +35,5 @@ div(class="cell medium-3 large-2 noMarginTop sidePanels" id="infoArea" data-stic
                         option(value="3") Adult (3-7 years)
                         option(value="4") Senior (7+ years)
 
-                    label Size
-                    select(
-                
-                            id="pet-size"
-                            name="pet-size"
-                    )
-                        //- option(value="Any" selected) Any
-                        option(value="Small") Small (1-19 lbs)
-                        option(value="Medium" ) Medium (20-59 lbs)
-                        option(value="Large") Large (60-99 lbs)
-                        option(value="Extra-large") Extra-large (100+ lbs)
-
-                   
-                    button(type="submit" class="primary button expanded search-button" id="petSearchSubmit")
+                    a(type="submit" href="/home#allUsersDiv" class="primary button expanded search-button" id="petSearchSubmit")
                         | Search
-                   
-             
-
-
-
-
-
-        div(class="panel-radius" id="planner")
-
-            h5(class="smallHeader") Planned Play Dates 
-
-            a(href="/calendar")
-                button(type="button" class="primary button expanded search-button" id="plannerLink")
-                    | View Planner
-
-            //-   <!--   Todo items go here  -->
-
-        hr
-
-        //- div(class="panel-radius" id="favorites")
-
-        //-     h4(class="smallHeader") Your Top Places 
-            //- <!--   Favorite places go here  -->
-        
-        //- hr
-
-        //- div(class="panel-radius" id="events")
-
-        //-     h5(class="smallHeader") Nearby Events
-
-            

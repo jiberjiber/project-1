@@ -6,18 +6,15 @@ block forecast
     
     div(
         class=" grid-x grid-padding-x largePaddingTop pageMainSection"
-    )
-        
-        include includes/user-panel
-        article(class="cell medium-6 large-8 largePaddingTop" id="weatherForecast")
-            h3(id="currentDay") Current weather
+    )   
+        article(class="cell " id="weatherForecast")
+            h3(id="currentDay" class="sectionHeader marginBottom") Current Conditions
             div(id="currentWeatherPage" class="grid-x cell ")
                 h5(id="wpCurrentDate")
-                div(class="WeatherLargeArea small-12 medium-4")
-                    
+                div(class="WeatherLargeArea small-12 medium-3 large-2")
+                    img(id="weather-icon" alt="weather icon")
                     h2(class="currentTempInfo")
                         span(id="wpTemp")
-                    img(id="weather-icon" alt="weather icon")
                 p Humidity: 
                     span(id="wpHumidity")
                 p Wind Speed: 
@@ -25,11 +22,10 @@ block forecast
                 p UV Index: 
                     span(id="wpUV")
             hr
-            div(class="sixDayWeather ")
-                h3 6-Day Forecast
+            div(class="sixDayWeather")
+                h3.sectionHeader 6-Day Forecast
      
                 div(
                     id="forecast_div"
                     class="grid-x grid-padding-x weatherEl"
                 )
-        include includes/info-panel

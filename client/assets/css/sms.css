@@ -1,10 +1,32 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400);
 
+
 body {
     height: 100vh;
     overflow-y: hidden;
     padding-right: 15px; /* Avoid width reflow */
   }
+
+/* headers sections */
+.main-head{
+  background-color: #222B3C;
+  color: white;
+  display: flex;
+  align-items: center;
+  min-height: 5vh;
+}
+
+.main-head h1{
+  width: 90%;
+margin: auto;  
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+
+
+
 #instant-dm{
     position: fixed;
     height: 80%;

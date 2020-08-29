@@ -1,32 +1,32 @@
-doctype html
-html
-head
-  meta(charset='UTF-8')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title messaging
-  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css')
-  link(rel='stylesheet' href='./assets/css/style1.css')
-  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
-  script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js')
+//- doctype html
+//- html
+//- head
+//-   meta(charset='UTF-8')
+//-   meta(name='viewport' content='width=device-width, initial-scale=1.0')
+//-   title messaging
+//-   link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css')
+//-   link(rel='stylesheet' href='./assets/css/sms.css')
+//-   script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+//-   script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js')
 
-body
-#main.d-flex
-  #sideBar.d-flex.col.col-3
-    .flex-row
-      div
-        input#from(type='text' value='' placeholder='From')
-        button#sendName Enter Name
-      #online.d-flex.flex-column.list-group.list-group-flush
-  #container.d-flex.col.col-9.justify-content-center
-    #messageBar.col.col-12
-      #textingTo
-      #instant-dm.d-flex.flex-column
-        #incoming
-      #feedback
-      #keypad.d-flex.flex-row.align-self-center.input-group.input-group-lg
-        input#message.col.col-10(type='text' maxlength='70' placeholder='Enter message')
-        button#send.col-auto.btn.btn-info Send
+//- body
+//- #main.d-flex
+//-   #sideBar.d-flex.col.col-3
+//-     .flex-row
+//-       div
+//-         input#from(type='text' value='' placeholder='From')
+//-         button#sendName Enter Name
+//-       #online.d-flex.flex-column.list-group.list-group-flush
+//-   #container.d-flex.col.col-9.justify-content-center
+//-     #messageBar.col.col-12
+//-       #textingTo
+//-       #instant-dm.d-flex.flex-column
+//-         #incoming
+//-       #feedback
+//-       #keypad.d-flex.flex-row.align-self-center.input-group.input-group-lg
+//-         input#message.col.col-10(type='text' maxlength='70' placeholder='Enter message')
+//-         button#send.col-auto.btn.btn-info Send
 
-block localScripts 
-// <script src="/socket.io/socket.io.js"></script>
-script(src='./assets/scripts/dm.js')
+//- block localScripts 
+//- // <script src="/socket.io/socket.io.js"></script>
+//- script(src='./assets/scripts/dm.js')

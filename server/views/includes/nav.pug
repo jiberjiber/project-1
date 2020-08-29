@@ -1,5 +1,5 @@
-nav.customNavbar
-  div.brand-title 
+nav(class="customNavbar")
+  div(class="brand-title")
     a(href="/")
         img(
             src="/assets/images/login-corgi-small.png" 
@@ -19,9 +19,18 @@ nav.customNavbar
                 i.fa.fa-home
                 | Home
         li
-            a(href='profile/' + user.id alt="profile" id="profileLink")
-                i.fa.fa-user
-                | Profile
+            if userID == thisID
+                a(href='profile/' +userID alt="profile" id="profileLink")
+                    i.fa.fa-user
+                    | Profile
+            else 
+                a(href='' +userID alt="profile" id="profileLink")
+                    i.fa.fa-user
+                    | Profile
+        li
+            a(href='/calendar' alt="planner")
+                i.fa.fa-calendar
+                | Planner
         li
             a(href='/sms' alt="sms")
                 i.fa.fa-comments
@@ -30,7 +39,12 @@ nav.customNavbar
             a(href='/weather' alt="weather")
                 i.fa.fa-cloud
                 | Weather
+        li.hide-for-large
+            a(href='/home/#searchForm' alt="search")
+                i.fa.fa-search
+                | Search Dogs     
         li
             a(alt="sign out")
                 button#logoutBtn.button.small.hollow.topbar-responsive-button(type='button') 
-                    i.fa.fa-sign-out Sign Out
+                    i.fa.fa-sign-out 
+                    | Sign Out
