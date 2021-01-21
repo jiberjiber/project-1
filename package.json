@@ -22,7 +22,7 @@
     "pug": "^3.0.0",
     "sequelize": "^6.3.4",
     "sequelize-cli": "^6.2.0",
-    "socket.io": "^2.3.0"
+    "socket.io": "^2.4.0"
   },
   "devDependencies": {},
   "repository": {
